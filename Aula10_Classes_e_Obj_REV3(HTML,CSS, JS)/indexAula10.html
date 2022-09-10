@@ -1,0 +1,95 @@
+<!-- Trabalho - Aula 10 - Classes e Objetos
+    Edson Ferreira - 233634
+    Romualdo Cavassana Junior - 244063
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Aula 10 - Classes e Objetos</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&family=Roboto&display=swap" rel="stylesheet">
+        
+        <script src="aula10js.js" defer></script>
+    
+    </head>   
+     
+    <body>
+       
+        <header>
+            <h1>Gerenciador de disciplinas</h1>
+        </header>
+
+        <main>
+
+            <div class="title">
+                <h2>Cadastro de alunos</h2>
+            </div>
+
+            <div class="cartaoNovoAluno">
+                <div class="linhaInput">
+                    <label>Nome do aluno</label>
+                    <input type="text" id="nomeAluno" placeholder="Nome do aluno">
+                </div>
+                 <div class="linhaInput">
+                    <label>RA</label>
+                    <input type="number" id="RA" placeholder="RA do aluno">
+                </div>
+                <div class="linhaInput">
+                    <label>CR</label>
+                    <input type="number" id="CR" placeholder="Valor do CR">
+                </div>
+
+                <button onclick="disciplina1.salvarAluno()" id="botao1">Adicionar</button>
+                <button onclick="disciplina1.cancelar()">Cancelar</button>
+            </div>
+
+            <div>
+                <h3 class="dadosDisciplina" id="disciplinaMostra"> </h3>
+            </div>
+
+            <div class="subtitle">
+                <h3>Lista de alunos matriculados</h3>
+                <div class="linhaInput">
+                    <p>Ordem crescente: <input type="checkbox" id="direcaoOrdem" value="crescente"/></p> 
+                    <div class="cartaoNovoAluno">
+                        <button onclick="disciplina1.ordenaNome()" id="botao2">Ordenar por Nome</button>
+                        <button onclick="disciplina1.ordenaRA()" id="botao3">Ordenar por RA</button>
+                        <button onclick="disciplina1.ordenaCR()" id="botao4">Ordenar por CR</button>
+                    </div>
+                </div>
+                <div class="cartaoNovoAluno">
+                    <div class="linhaInput">
+                        <label>Remover aluno por busca de RA</label>
+                        <input type="text" id="removeRA" placeholder="RA do aluno">    
+                    </div>
+                    <button onclick="disciplina1.removerPorRA()" id="botao5">Remover aluno</button>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <table>
+                    <thead>
+                        <th class="center">RA</th>
+                        <th>Nome do aluno</th>
+                        <th>CR</th>
+                        <th class="center">Ações</th>
+                    </thead>
+                    <tbody id="tbodyAlunos">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h3 class="dadosDisciplina" id="atualizacaoOrdem"> </h3>
+            </div>
+
+        </main>
+    
+    </body>
+</html>
